@@ -1,0 +1,68 @@
+[
+    {
+        "age": 253,
+        "classification": "Wookie: star-wars",
+        "id": 0,
+        "isHumanoid": false,
+        "planet": "Kashyyyk",
+        "traits": [
+            "HAIRY",
+            "TALL"
+        ],
+        "universe": "star-wars"
+    },
+    {
+        "age": 34,
+        "classification": "Ewok: star-wars",
+        "id": 1,
+        "isHumanoid": false,
+        "planet": "Endor",
+        "traits": [
+            "HAIRY",
+            "SHORT"
+        ],
+        "universe": "star-wars"
+    },
+    {
+        "age": 352,
+        "classification": "Wookie: star-wars",
+        "id": 7,
+        "isHumanoid": true,
+        "planet": "Kashyyyk",
+        "traits": [
+            "HAIRY",
+            "TALL"
+        ],
+        "universe": "star-wars"
+    },
+    {
+        "age": 22,
+        "classification": "Ewok: star-wars",
+        "id": 8,
+        "isHumanoid": false,
+        "planet": "Endor",
+        "traits": [],
+        "universe": "star-wars"
+    },
+    {
+        "age": 253,
+        "classification": "Wookie: star-wars",
+        "id": 14,
+        "isHumanoid": false,
+        "planet": "Unknown",
+        "traits": [
+            "HAIRY",
+            "TALL"
+        ],
+        "universe": "star-wars"
+    },
+    {
+        "age": -1,
+        "classification": "Ewok: star-wars",
+        "id": 15,
+        "isHumanoid": false,
+        "planet": "Endor",
+        "traits": [],
+        "universe": "star-wars"
+    }
+]
