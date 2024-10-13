@@ -1,0 +1,70 @@
+[
+    {
+        "age": 451,
+        "classification": "Elf: rings",
+        "id": 5,
+        "isHumanoid": true,
+        "planet": "Earth",
+        "traits": [
+            "BLONDE",
+            "POINTY_EARS"
+        ],
+        "universe": "rings"
+    },
+    {
+        "age": 124,
+        "classification": "Dwarf: rings",
+        "id": 6,
+        "isHumanoid": true,
+        "planet": "Earth",
+        "traits": [
+            "SHORT",
+            "BULKY"
+        ],
+        "universe": "rings"
+    },
+    {
+        "age": 7523,
+        "classification": "Elf: rings",
+        "id": 12,
+        "isHumanoid": true,
+        "planet": "Unknown",
+        "traits": [],
+        "universe": "rings"
+    },
+    {
+        "age": -1,
+        "classification": "Dwarf: rings",
+        "id": 13,
+        "isHumanoid": true,
+        "planet": "Earth",
+        "traits": [
+            "SHORT",
+            "BULKY"
+        ],
+        "universe": "rings"
+    },
+    {
+        "age": 451,
+        "classification": "Elf: rings",
+        "id": 19,
+        "isHumanoid": true,
+        "planet": "Earth",
+        "traits": [
+            "BLONDE",
+            "TALL"
+        ],
+        "universe": "rings"
+    },
+    {
+        "age": -1,
+        "classification": "Dwarf: rings",
+        "id": 20,
+        "isHumanoid": true,
+        "planet": "Unknown",
+        "traits": [
+            "BULKY"
+        ],
+        "universe": "rings"
+    }
+]

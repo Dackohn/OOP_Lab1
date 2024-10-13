@@ -1,0 +1,82 @@
+[
+    {
+        "age": 59,
+        "classification": "Betelgeusian: hitch-hicker",
+        "id": 3,
+        "isHumanoid": true,
+        "planet": "Betelgeuse",
+        "traits": [
+            "EXTRA_ARMS",
+            "EXTRA_HEAD"
+        ],
+        "universe": "hitch-hicker"
+    },
+    {
+        "age": 128,
+        "classification": "Vogon: hitch-hicker",
+        "id": 4,
+        "isHumanoid": false,
+        "planet": "Vogsphere",
+        "traits": [
+            "GREEN",
+            "BULKY"
+        ],
+        "universe": "hitch-hicker"
+    },
+    {
+        "age": 45,
+        "classification": "Betelgeusian: hitch-hicker",
+        "id": 10,
+        "isHumanoid": true,
+        "planet": "Betelgeuse",
+        "traits": [
+            "EXTRA_ARMS",
+            "EXTRA_HEAD"
+        ],
+        "universe": "hitch-hicker"
+    },
+    {
+        "age": 128,
+        "classification": "Vogon: hitch-hicker",
+        "id": 11,
+        "isHumanoid": false,
+        "planet": "Unknown",
+        "traits": [
+            "GREEN"
+        ],
+        "universe": "hitch-hicker"
+    },
+    {
+        "age": 26,
+        "classification": "Betelgeusian: hitch-hicker",
+        "id": 17,
+        "isHumanoid": true,
+        "planet": "Unknown",
+        "traits": [
+            "EXTRA_ARMS"
+        ],
+        "universe": "hitch-hicker"
+    },
+    {
+        "age": -1,
+        "classification": "Vogon: hitch-hicker",
+        "id": 18,
+        "isHumanoid": false,
+        "planet": "Unknown",
+        "traits": [
+            "BULKY"
+        ],
+        "universe": "hitch-hicker"
+    },
+    {
+        "age": 82,
+        "classification": "Betelgeusian: hitch-hicker",
+        "id": 21,
+        "isHumanoid": true,
+        "planet": "Unknown",
+        "traits": [
+            "EXTRA_HEAD"
+        ],
+        "universe": "hitch-hicker"
+    }
+]
