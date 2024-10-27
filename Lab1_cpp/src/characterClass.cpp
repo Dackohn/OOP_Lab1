@@ -9,7 +9,7 @@ Character::Character(const json& data) {
         isHumanoid = data["isHumanoid"].get<bool>();
         isHumanoidDataPresent = true;
     } else {
-        isHumanoidDataPresent = false;
+        isHumanoidDataPresent = false; 
     }
 
     planet = data.value("planet", "Unknown");
@@ -48,4 +48,36 @@ void Character::display() {
     } else {
         cout << "Traits: None" << endl;
     }
+}
+
+int Character::getId(){
+    return id;
+}
+
+bool Character::getIsHumanoid() {
+    return isHumanoid;
+}
+
+bool Character::getIsHumanoidDataPresent() {
+    return isHumanoidDataPresent;
+}
+
+string Character::getPlanet() {
+    return planet;
+}
+
+int Character::getAge() {
+    return age;
+}
+
+vector<string> Character::getTraits() {
+    return traits;
+}
+
+string Character::getUniverse() {
+    return universe;
+}
+
+string Character::getRace() {
+    return race;
 }

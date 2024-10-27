@@ -4,13 +4,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "nlohmann/json.hpp"
+#include "../include/nlohmann/json.hpp"
 
 using json = nlohmann::json;
 using namespace std;
 
 class Character {
-public:
+private:
     int id;
     bool isHumanoid;
     bool isHumanoidDataPresent;
@@ -19,10 +19,18 @@ public:
     vector<string> traits;
     string universe;
     string race;
-
+public:
     Character(const json& data);
     void setUniverse(string classification);
     void display();
+    int getId();
+    bool getIsHumanoid();
+    bool getIsHumanoidDataPresent();
+    string getPlanet();
+    int getAge();
+    vector<string> getTraits();
+    string getUniverse();
+    string getRace();
 };
 
 #endif

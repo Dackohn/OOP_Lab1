@@ -8,21 +8,21 @@ string Universe::classifyCharacter(Character& character) {
         int maxMatches = 0;
 
         // Classify by planet first (strongest identifier)
-        if (character.planet == "Kashyyyk") {
+        if (character.getPlanet() == "Kashyyyk") {
             return "Wookie: star-wars";
-        } else if (character.planet == "Endor") {
+        } else if (character.getPlanet() == "Endor") {
             return "Ewok: star-wars";
-        } else if (character.planet == "Asgard") {
+        } else if (character.getPlanet() == "Asgard") {
             return "Asgardian: Marvel";
-        } else if (character.planet == "Betelgeuse") {
+        } else if (character.getPlanet() == "Betelgeuse") {
             return "Betelgeusian: hitch-hicker";
-        } else if (character.planet == "Vogsphere") {
+        } else if (character.getPlanet() == "Vogsphere") {
             return "Vogon: hitch-hicker";
-        } else if (character.planet == "Earth") {
+        } else if (character.getPlanet() == "Earth") {
             int elfMatches = 0;
             int dwarfMatches = 0;
 
-            for (const string& trait : character.traits) {
+            for (const string& trait : character.getTraits()) {
                 if (trait == "BLONDE" || trait == "POINTY_EARS") {
                     elfMatches++;
                 }
@@ -31,24 +31,24 @@ string Universe::classifyCharacter(Character& character) {
                 }
             }
 
-            if (elfMatches > dwarfMatches && (character.age > 200 || character.age == -1)) {
+            if (elfMatches > dwarfMatches && (character.getAge() > 200)) {
                 return "Elf: rings";
             }
-            if (dwarfMatches >= elfMatches && character.age <= 200) {
+            if (dwarfMatches >= elfMatches && character.getAge() <= 200) {
                 return "Dwarf: rings";
             }
         }
 
         // Handle cases where planet is missing (rely on traits + age)
         if (classification == "Unknown Species or Universe") {
-            if(character.isHumanoidDataPresent == true){
+            if(character.getIsHumanoidDataPresent() == true){
                 // Check for non-humanoid species first
-                if (!character.isHumanoid) {
+                if (!character.getIsHumanoid()) {
                     int wookieMatches = 0;
                     int ewokMatches = 0;
                     int vogonMatches = 0;
 
-                    for (const string& trait : character.traits) {
+                    for (const string& trait : character.getTraits()) {
                         if (trait == "HAIRY" || trait == "TALL") {
                             wookieMatches++;
                         }
@@ -61,15 +61,15 @@ string Universe::classifyCharacter(Character& character) {
                     }
 
                     // Prioritize by highest trait match count
-                    if (wookieMatches > maxMatches && character.age <= 400) {
+                    if (wookieMatches > maxMatches && character.getAge() <= 400) {
                         classification = "Wookie: star-wars";
                         maxMatches = wookieMatches;
                     }
-                    if (ewokMatches > maxMatches && character.age <= 60) {
+                    if (ewokMatches > maxMatches && character.getAge() <= 60) {
                         classification = "Ewok: star-wars";
                         maxMatches = ewokMatches;
                     }
-                    if (vogonMatches > maxMatches && character.age <= 200) {
+                    if (vogonMatches > maxMatches && character.getAge() <= 200) {
                         classification = "Vogon: hitch-hicker";
                         maxMatches = vogonMatches;
                     }
@@ -79,7 +79,7 @@ string Universe::classifyCharacter(Character& character) {
                     int elfMatches = 0;
                     int dwarfMatches = 0;
 
-                    for (const string& trait : character.traits) {
+                    for (const string& trait : character.getTraits()) {
                         if (trait == "BLONDE" || trait == "TALL") {
                             asgardianMatches++;
                         }
@@ -95,19 +95,19 @@ string Universe::classifyCharacter(Character& character) {
                     }
 
                     // Prioritize by highest trait match count
-                    if (asgardianMatches > maxMatches && character.age <= 5000) {
+                    if (asgardianMatches > maxMatches && character.getAge() <= 5000) {
                         classification = "Asgardian: Marvel";
                         maxMatches = asgardianMatches;
                     }
-                    if (betelgeusianMatches > maxMatches && character.age <= 100) {
+                    if (betelgeusianMatches > maxMatches && character.getAge() <= 100) {
                         classification = "Betelgeusian: hitch-hicker";
                         maxMatches = betelgeusianMatches;
                     }
-                    if (elfMatches > maxMatches && (character.age > 200 || character.age == -1)) {
+                    if (elfMatches > maxMatches && (character.getAge() > 200 )) {
                         classification = "Elf: rings";
                         maxMatches = elfMatches;
                     }
-                    if (dwarfMatches > maxMatches && character.age <= 200) {
+                    if (dwarfMatches > maxMatches && character.getAge() <= 200) {
                         classification = "Dwarf: rings";
                         maxMatches = dwarfMatches;
                     }
@@ -124,7 +124,7 @@ string Universe::classifyCharacter(Character& character) {
             int elfMatches = 0;
             int dwarfMatches = 0;
 
-            for (const string& trait : character.traits) {
+            for (const string& trait : character.getTraits()) {
                 if (trait == "HAIRY" || trait == "TALL") {
                     wookieMatches++;
                 }
@@ -149,31 +149,31 @@ string Universe::classifyCharacter(Character& character) {
             }
 
             // Prioritize by highest trait match count
-            if (wookieMatches > maxMatches && character.age <= 400) {
+            if (wookieMatches > maxMatches && character.getAge() <= 400) {
                 classification = "Wookie: star-wars";
                 maxMatches = wookieMatches;
             }
-            if (ewokMatches > maxMatches && character.age <= 60) {
+            if (ewokMatches > maxMatches && character.getAge() <= 60) {
                 classification = "Ewok: star-wars";
                 maxMatches = ewokMatches;
             }
-            if (vogonMatches > maxMatches && character.age <= 200) {
+            if (vogonMatches > maxMatches && character.getAge() <= 200) {
                 classification = "Vogon: hitch-hicker";
                 maxMatches = vogonMatches;
             }
-            if (asgardianMatches > maxMatches && character.age <= 5000) {
+            if (asgardianMatches > maxMatches && character.getAge() <= 5000) {
                 classification = "Asgardian: Marvel";
                 maxMatches = asgardianMatches;
             }
-            if (betelgeusianMatches > maxMatches && character.age <= 100) {
+            if (betelgeusianMatches > maxMatches && character.getAge() <= 100) {
                 classification = "Betelgeusian: hitch-hicker";
                 maxMatches = betelgeusianMatches;
             }
-            if (elfMatches > maxMatches && (character.age > 5000)) {
+            if (elfMatches > maxMatches && (character.getAge() > 5000)) {
                 classification = "Elf: rings";
                 maxMatches = elfMatches;
             }
-            if (dwarfMatches > maxMatches && character.age <= 200) {
+            if (dwarfMatches > maxMatches && character.getAge() <= 200) {
                 classification = "Dwarf: rings";
                 maxMatches = dwarfMatches;
             }
@@ -181,15 +181,15 @@ string Universe::classifyCharacter(Character& character) {
 
         // Classify by age alone if traits are missing
         if (classification == "Unknown Species or Universe") {
-            if (character.age > 5000) {
+            if (character.getAge() > 5000) {
                 return "Elf: rings";
-            } else if (character.age > 200 && character.age <= 5000) {
+            } else if (character.getAge() > 200 && character.getAge() <= 5000) {
                 return "Asgardian: Marvel";
-            } else if (character.age <= 60) {
+            } else if (character.getAge() <= 60) {
                 return "Ewok: star-wars";
-            } else if (character.age <= 100) {
+            } else if (character.getAge() <= 100) {
                 return "Betelgeusian: hitch-hicker";
-            } else if (character.age <= 200) {
+            } else if (character.getAge() <= 200) {
                 return "Vogon: hitch-hicker";
             }
         }
