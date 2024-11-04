@@ -1,0 +1,38 @@
+[
+    {
+        "age": 2034,
+        "classification": "Asgardian: Marvel",
+        "id": 2,
+        "isHumanoid": true,
+        "planet": "Asgard",
+        "traits": [
+            "BLONDE",
+            "TALL"
+        ],
+        "universe": "Marvel"
+    },
+    {
+        "age": -1,
+        "classification": "Asgardian: Marvel",
+        "id": 9,
+        "isHumanoid": true,
+        "planet": "Asgard",
+        "traits": [
+            "BLONDE",
+            "TALL"
+        ],
+        "universe": "Marvel"
+    },
+    {
+        "age": 154,
+        "classification": "Asgardian: Marvel",
+        "id": 16,
+        "isHumanoid": true,
+        "planet": "Unknown",
+        "traits": [
+            "BLONDE",
+            "TALL"
+        ],
+        "universe": "Marvel"
+    }
+]
