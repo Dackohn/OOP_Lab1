@@ -3,6 +3,7 @@
 #include <string>
 #include <cctype>
 #include <sstream>
+#include <vector>
 using namespace std;
 
 class TextData {
@@ -21,8 +22,8 @@ private:
     }
 
 public:
-    TextData(const string& filePath) : fileName(filePath), numberOfVowels(0), numberOfConsonants(0), numberOfLetters(0), numberOfSentences(0) {
-
+    TextData(const string& filePath) : fileName(filePath), numberOfVowels(0), numberOfConsonants(0),
+                                       numberOfLetters(0), numberOfSentences(0) {
         ifstream file(filePath);
         if (file.is_open()) {
             stringstream buffer;
@@ -31,7 +32,7 @@ public:
             file.close();
             processText();
         } else {
-            cerr << "Failed to open the file." << endl;
+            cerr << "Failed to open the file: " << filePath << endl;
         }
     }
 
@@ -42,7 +43,6 @@ public:
             if (word.length() > longestWord.length()) {
                 longestWord = word;
             }
-
             for (char ch : word) {
                 if (isalpha(ch)) {
                     numberOfLetters++;
@@ -54,7 +54,6 @@ public:
                 }
             }
         }
-
         for (char ch : text) {
             if (ch == '.' || ch == '?' || ch == '!') {
                 numberOfSentences++;
@@ -69,24 +68,29 @@ public:
     int getNumberOfLetters() const { return numberOfLetters; }
     int getNumberOfSentences() const { return numberOfSentences; }
     string getLongestWord() const { return longestWord; }
+    
+    void printInfo() const {
+        cout << "File Name: " << getFilename() << endl;
+        cout << "Text Content: " << getText() << endl;
+        cout << "Number of Vowels: " << getNumberOfVowels() << endl;
+        cout << "Number of Consonants: " << getNumberOfConsonants() << endl;
+        cout << "Number of Letters: " << getNumberOfLetters() << endl;
+        cout << "Number of Sentences: " << getNumberOfSentences() << endl;
+        cout << "Longest Word: " << getLongestWord() << endl;
+        cout << "----------------------------------------" << endl;
+    }
 };
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        cerr << "Please provide the path to the .txt file as a argument." << endl;
+        cerr << "Please provide at least one .txt file as a argument." << endl;
         return 1;
     }
 
-    string filePath = argv[1];
-    TextData textData(filePath);
-
-    cout << "File Name: " << textData.getFilename() << endl;
-    cout << "Text Content: " << textData.getText() << endl;
-    cout << "Number of Vowels: " << textData.getNumberOfVowels() << endl;
-    cout << "Number of Consonants: " << textData.getNumberOfConsonants() << endl;
-    cout << "Number of Letters: " << textData.getNumberOfLetters() << endl;
-    cout << "Number of Sentences: " << textData.getNumberOfSentences() << endl;
-    cout << "Longest Word: " << textData.getLongestWord() << endl;
+    for (int i = 1; i < argc; ++i) {
+        TextData textData(argv[i]);
+        textData.printInfo();
+    }
 
     return 0;
 }
